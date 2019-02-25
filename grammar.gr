@@ -1,0 +1,122 @@
+# Note that terminals are lowercase (like president), preterminals are capitalized (like Noun) and other nonterminals are all-caps (like NP)
+
+1	ROOT	S .
+1	ROOT	S !
+1	ROOT	is it true that S ?     
+
+# VP_it refers to verb "perplex"
+# that a sandwich ate Sally perplexed the president .
+1	ROOT	that S VP_it .
+
+# it perplexed the president that a sandwich ate Sally .
+1	ROOT	it VP_it that S .
+
+# I wonder clauses
+1	ROOT	I wonder WHS .
+
+# The basic grammar rules.  Here's what the abbreviations stand for:
+#    S  = sentence
+#    NP = noun phrase
+#    VP = verb phrase
+#    PP = prepositional phrase
+#    Det = determiner (sometimes called "article")
+#    Prep = preposition
+#    Adj = adjective
+#    VP_it = verb phrases related to "perplex"
+#    Verb_s = "thought" or "understood", which can be followed by that clauses
+#    Verb_i = intransitive verb
+#    Verb_t = transitive verb
+#    CC: conjunction
+
+1	S	NP VP
+
+# I wonder clauses for 7(d)
+# I wonder what Sally ate .
+1	WHS	what NP Verb_t
+# I wonder what the president thought .
+1	WHS	what NP Verb_s
+1	WHS	what NP Verb_s Noun_mod
+# I wonder who ate the sandwich .
+1	WHS	who VP
+# I wonder where Sally ate the sandwich .
+1	WHS	where S
+# I wonder what Sally ate the sandwich with .
+1	WHS	what NP VP Prep
+
+# the president thought that a sandwich sighed .
+0.5	VP	Verb_s that S
+# Sally ate a sandwich .
+1	VP	Verb_t NP
+# the president sighed .
+1	VP	Verb_i
+# the president wanted and ate a sandwich .
+0.3	VP	VP CC VP
+# the president worked on every proposal on the desk .
+0.1	VP	VP PP
+# ... perplexed the president
+1	VP_it	Verb_it NP
+
+
+1	NP	Det Noun_c
+# Noun_n = Nouns like "Sally" that do not need Det
+0.2	NP	Noun_n
+# sandwich on the desk
+0.01	NP	NP PP
+# the president and Sally
+0.1	NP	NP CC NP
+1	PP	Prep NP
+
+# For noun clauses in 7(c)
+1	Noun	Adj Noun
+# Noun_clauses can be a noun directly
+10	Noun_c	Noun
+# the president that ate the sandwich .
+1	Noun_c	Noun that VP
+# the sandwich that the president ate .
+1	Noun_c	Noun that NP Verb_t
+# the sandwich that the president thought pickled
+1	Noun_c	Noun that NP Verb_s that VP
+# the sandwich that the president thought that Sally ate
+1	Noun	Noun Noun_mod
+1	Noun_mod	that NP Verb_t
+1 	Noun_mod	that NP Verb_s
+
+#Vocab
+
+1	Verb_t	ate
+1	Verb_t	wanted
+1	Verb_t	kissed
+1	Verb_t	perplexed
+1	Verb_it	perplexed
+1	Verb_s	understood
+1	Verb_t	understood
+1	Verb_s	thought
+1	Verb_t	pickled
+1	Verb_i	sighed
+1	Verb_i	worked
+
+1	Det	the
+1	Det	a
+1	Det	every
+
+1	CC	and
+1	CC	or
+
+1	Noun_n	Sally
+1	Noun	president
+1	Noun	sandwich
+1	Noun	pickle
+1	Noun	chief of staff
+1	Noun	floor
+1	Noun	proposal
+1	Noun	desk
+
+1	Adj	fine
+1	Adj	delicious
+1	Adj	perplexed
+1	Adj	pickled
+
+1	Prep	with
+1	Prep	on
+1	Prep	under
+1	Prep	in
