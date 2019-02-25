@@ -2,7 +2,7 @@
 
 1	ROOT	S .
 1	ROOT	S !
-1	ROOT	is it true that S ?     
+1	ROOT	is it true that S ?     # mixing terminals and nonterminals is ok.
 
 # VP_it refers to verb "perplex"
 # that a sandwich ate Sally perplexed the president .
@@ -14,7 +14,10 @@
 # I wonder clauses
 1	ROOT	I wonder WHS .
 
-# The basic grammar rules.  Here's what the abbreviations stand for:
+# add time clauses
+1	ROOT	S Adv S .
+1	ROOT	I wonder WHS Adv S .
+
 #    S  = sentence
 #    NP = noun phrase
 #    VP = verb phrase
@@ -27,6 +30,8 @@
 #    Verb_i = intransitive verb
 #    Verb_t = transitive verb
 #    CC: conjunction
+#	 Pos: possession
+#	 Noun_m = noun modifier (that NP Verb)
 
 1	S	NP VP
 
@@ -59,6 +64,9 @@
 
 1	NP	Det Noun_c
 # Noun_n = Nouns like "Sally" that do not need Det
+1	NP	Det Noun_s
+1	NP	Det Pos Noun_s
+1	Pos	Noun 's
 0.2	NP	Noun_n
 # sandwich on the desk
 0.01	NP	NP PP
@@ -67,7 +75,33 @@
 1	PP	Prep NP
 
 # For noun clauses in 7(c)
-1	Noun	Adj Noun
+10	Noun_s	Adj Noun
+1	Adj	Adj_1
+1	Adj	Adj_2
+1	Adj	Adj_3
+1	Adj	Adj_4
+1	Adj	Adj_5
+1	Adj	Adj_s
+
+1 	Adj_s	Adj_1 Adj_s
+1 	Adj_s	Adj_1
+2 	Adj_s	Adj_2 Adj_a
+
+1 	Adj_a	Adj_2 Adj_a
+1 	Adj_a	Adj_2
+2 	Adj_a	Adj_2 Adj_b
+
+1 	Adj_b	Adj_3 Adj_b
+1 	Adj_b	Adj_3
+2 	Adj_b	Adj_3 Adj_c
+
+1 	Adj_c	Adj_4 Adj_c
+1 	Adj_c	Adj_4
+2 	Adj_c	Adj_4 Adj_d
+
+1 	Adj_d	Adj_5 Adj_d
+1 	Adj_d	Adj_5
+
 # Noun_clauses can be a noun directly
 10	Noun_c	Noun
 # the president that ate the sandwich .
@@ -81,7 +115,7 @@
 1	Noun_mod	that NP Verb_t
 1 	Noun_mod	that NP Verb_s
 
-#Vocab
+# Vocab
 
 1	Verb_t	ate
 1	Verb_t	wanted
@@ -111,12 +145,27 @@
 1	Noun	proposal
 1	Noun	desk
 
-1	Adj	fine
-1	Adj	delicious
-1	Adj	perplexed
-1	Adj	pickled
+1	Adj_1	fine
+1	Adj_1	delicious
+1	Adj_1	perplexed
+1	Adj_1	pickled
+
+1	Adj_2	large
+1	Adj_2	small
+
+1	Adj_3	old
+1	Adj_3	young
+
+1	Adj_4	rectangular
+1	Adj_4	circular
+
+1	Adj_5	red
+1	Adj_5	blue
 
 1	Prep	with
 1	Prep	on
 1	Prep	under
 1	Prep	in
+
+1	Adv	when
+1	Adv	as
