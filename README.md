@@ -12,4 +12,4 @@ a) relative clauses <br>
 b) "I wonder" clauses <br>
 c) adverbial clauses (ex. Sally sighed when the president ate sandwich) <br>
 d) object possession with multiple adjectives (ex. the chief of staff’s perplexed fine sandwich) <br>
-e) particular order of adjectives: when describing some- thing with more than one adjective, you arrange the adjectives in a specific order (quality, size, age, shape, color).
+e) particular ordering of adjectives: when describing some- thing with more than one adjective, you arrange the adjectives in a specific order (quality, size, age, shape, color).
