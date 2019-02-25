@@ -8,8 +8,8 @@ where the first input is the name of the grammar file and the second input is th
 
 This is a sentence generator that can take in the rules of a grammar file to create "grammatical" sentences. The rules that it uses is based on whether or not a nonterminal is existent at that point and on the probability of the rule being used. Special additions to the grammar include the following:
 
-a) relative clauses
-b) "I wonder" clauses
-c) adverbial clauses (ex. Sally sighed when the president ate sandwich)
-d) object possession with multiple adjectives (ex. the chief of staff’s perplexed fine sandwich)
+a) relative clauses <br>
+b) "I wonder" clauses <br>
+c) adverbial clauses (ex. Sally sighed when the president ate sandwich) <br>
+d) object possession with multiple adjectives (ex. the chief of staff’s perplexed fine sandwich) <br>
 e) particular order of adjectives: when describing some- thing with more than one adjective, you arrange the adjectives in a specific order (quality, size, age, shape, color).
